@@ -44,7 +44,9 @@ const base = EditorView.theme({
     color: 'var(--fgColor-muted)',
     border: 'none',
   },
-  '.cm-activeLine, .cm-activeLineGutter': { backgroundColor: 'transparent' },
+  // basicSetup highlights the active line with a light-theme color; GitHub
+  // shows code blocks without it.
+  '&.cm-editor .cm-activeLine, &.cm-editor .cm-activeLineGutter': { backgroundColor: 'transparent' },
 })
 
 export const githubCodeTheme: Extension = [base, syntaxHighlighting(highlight)]
