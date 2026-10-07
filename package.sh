@@ -18,7 +18,7 @@ echo -e "${BLUE}Building ${NAME} v${VERSION}...${NC}"
 npm run build --silent
 
 [ -f "$ZIP_NAME" ] && rm "$ZIP_NAME"
-zip -r "$ZIP_NAME" manifest.json icons dist -x "*.DS_Store"
+zip -r "$ZIP_NAME" manifest.json icons dist -x "*.DS_Store" "icons/src/*"
 
 echo -e "${GREEN}Package created: ${ZIP_NAME}${NC}"
 echo -e "${BLUE}Upload at: https://chrome.google.com/webstore/devconsole${NC}"

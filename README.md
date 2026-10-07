@@ -86,6 +86,7 @@ npm run watch        # rebuild on change
 npm run typecheck
 npm test             # unit tests (Markdown merge)
 npm run test:e2e     # loads the extension in Chromium against a mock GitHub edit page
+./scripts/render-icons.sh   # icons/src/*.svg -> icons/*.png (needs librsvg + ImageMagick)
 ```
 
 After `npm run build`, click the reload icon on the extension in `chrome://extensions/`.

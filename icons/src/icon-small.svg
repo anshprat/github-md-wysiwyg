@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <!-- Small sizes (16, 32): Markdown mark only, green arrow for "edit". -->
+  <rect width="16" height="16" rx="3.5" fill="#24292f"/>
+  <rect x="0.5" y="0.5" width="15" height="15" rx="3" fill="none" stroke="#ffffff" stroke-opacity="0.18"/>
+  <g transform="translate(-1.67 2.24) scale(0.09)">
+    <path fill="#ffffff" d="M30 98V30h20l20 25 20-25h20v68H90V59L70 84 50 59v39z"/>
+    <path fill="#3fb950" d="M155 98l-30-33h20V30h20v35h20z"/>
+  </g>
+</svg>
