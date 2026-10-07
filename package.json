@@ -1,0 +1,39 @@
+{
+  "name": "github-md-wysiwyg",
+  "version": "1.0.0",
+  "private": true,
+  "description": "WYSIWYG editing for Markdown files on github.com",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "watch": "node scripts/build.mjs --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:e2e": "node scripts/build.mjs && node test/e2e/run.mjs"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.3.4",
+    "@types/mdast": "^4.0.4",
+    "codemirror": "^6.0.2",
+    "esbuild": "^0.28.2",
+    "github-markdown-css": "^5.9.0",
+    "happy-dom": "^20.14.5",
+    "playwright": "^1.63.0",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.3"
+  },
+  "dependencies": {
+    "@codemirror/language": "^6.12.4",
+    "@codemirror/language-data": "^6.5.2",
+    "@codemirror/state": "^6.7.6",
+    "@codemirror/view": "^6.43.13",
+    "@lezer/highlight": "^1.2.5",
+    "@milkdown/crepe": "^7.22.2",
+    "@milkdown/kit": "^7.22.2",
+    "mdast-util-to-string": "^4.0.0",
+    "remark-gfm": "^4.0.1",
+    "remark-parse": "^11.0.0",
+    "remark-stringify": "^11.0.0",
+    "unified": "^11.0.5"
+  }
+}

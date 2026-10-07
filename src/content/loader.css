@@ -1,0 +1,26 @@
+/* Rich mode: hide GitHub's source editor, show ours in its place. */
+html[data-gmw-mode='rich'] [data-gmw-host] {
+  display: none !important;
+}
+
+.gmw-root {
+  position: relative;
+  min-height: 400px;
+  color: var(--fgColor-default, #1f2328);
+  background: var(--bgColor-default, #ffffff);
+}
+
+.gmw-toast {
+  position: fixed;
+  z-index: 1000;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: min(560px, calc(100vw - 32px));
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  color: var(--fgColor-onEmphasis, #ffffff);
+  background: var(--bgColor-emphasis, #25292e);
+  box-shadow: var(--shadow-floating-small, 0 6px 12px rgba(0, 0, 0, 0.15));
+}

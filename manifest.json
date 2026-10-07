@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "GitHub Markdown WYSIWYG",
+  "version": "1.0.0",
+  "description": "Edit Markdown files on github.com in a rich-text (WYSIWYG) editor, and commit with GitHub's normal flow.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": ["scripting", "storage"],
+  "host_permissions": ["https://github.com/*"],
+  "background": {
+    "service_worker": "dist/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/*"],
+      "js": ["dist/bridge-main.js"],
+      "world": "MAIN",
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://github.com/*"],
+      "js": ["dist/loader.js"],
+      "css": ["dist/loader.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
