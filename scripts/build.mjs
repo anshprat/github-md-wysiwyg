@@ -17,7 +17,14 @@ const common = {
   sourcemap: watch ? 'inline' : false,
   legalComments: 'none',
   logLevel: 'info',
-  define: { 'process.env.NODE_ENV': '"production"' },
+  define: {
+    'process.env.NODE_ENV': '"production"',
+    // lodash finds the global object with `global || self || Function('return this')()`.
+    // In a Firefox content script `self` is the page window seen through a wrapper, so
+    // lodash falls back to Function(), which the extension CSP blocks and the editor fails
+    // to load. With `global` set, lodash stops at the first check in every browser.
+    global: 'globalThis',
+  },
 }
 
 const entries = [
