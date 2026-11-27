@@ -4,7 +4,7 @@
 
 ## Overview
 
-GitHub Markdown WYSIWYG is a Chrome extension that lets you edit Markdown files on github.com in a rich-text (WYSIWYG) editor. This privacy policy explains our data practices.
+GitHub Markdown WYSIWYG is a Chrome and Firefox extension that lets you edit Markdown files on github.com in a rich-text (WYSIWYG) editor. This privacy policy explains our data practices.
 
 ## Data Collection and Usage
 
@@ -59,6 +59,7 @@ https://github.com/anshprat/github-md-wysiwyg
 
 This extension complies with:
 - Chrome Web Store Developer Program Policies
+- Firefox Add-on Policies
 - General Data Protection Regulation (GDPR)
 - California Consumer Privacy Act (CCPA)
 

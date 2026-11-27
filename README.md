@@ -35,6 +35,24 @@ None of them edit repository Markdown files in WYSIWYG mode.
 
 Also works in Edge, Brave, Arc, and other Chromium browsers.
 
+## Firefox
+
+Firefox 140 or later is necessary. Firefox uses the same code as Chrome, with a different manifest. Load the Firefox build, not the repository root.
+
+1. Run `npm install` once, then run `./package.sh firefox`. This builds the extension and writes the Firefox build to `build/firefox/`. The script needs `jq` and `zip`.
+2. Open `about:debugging#/runtime/this-firefox`.
+3. Click **Load Temporary Add-on** and select `build/firefox/manifest.json`.
+
+Firefox removes a temporary add-on when it closes. To keep the add-on installed, sign it on addons.mozilla.org (AMO) as unlisted:
+
+```bash
+npx web-ext sign --channel=unlisted --source-dir build/firefox --artifacts-dir build/signed
+```
+
+The command reads your AMO API keys from the `WEB_EXT_API_KEY` and `WEB_EXT_API_SECRET` environment variables. Create the keys at https://addons.mozilla.org/en-US/developers/addon/api/key/.
+
+`./package.sh` with no argument makes `github-markdown-wysiwyg-chrome-vX.Y.Z.zip` and `github-markdown-wysiwyg-firefox-vX.Y.Z.zip`. The Firefox manifest is `manifest.json` merged with `firefox/manifest.overrides.json`.
+
 ## Usage
 
 1. Open a Markdown file on github.com and click the pencil (edit) icon.
@@ -97,4 +115,4 @@ After `npm run build`, click the reload icon on the extension in `chrome://exten
 ./package.sh
 ```
 
-This builds the extension and creates `github-markdown-wysiwyg-v{version}.zip`, ready for Chrome Web Store upload.
+This builds the extension and creates `github-markdown-wysiwyg-chrome-v{version}.zip` for the Chrome Web Store and `github-markdown-wysiwyg-firefox-v{version}.zip` for addons.mozilla.org. Run `./package.sh chrome` or `./package.sh firefox` to make only one of them.
